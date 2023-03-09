@@ -44,7 +44,7 @@ class HodgkinHuxley:
         return self.gK * self.n ** 4 * (self.V - self.EK)
 
     def IL(self):
-        return self.gL + (self.V - self.EL)
+        return self.gL * (self.V - self.EL)
 
     def step(self, I_inj=0):
         self.m += (self.alpha_m() * (1.0 - self.m) - self.beta_m() * self.m) * self.eta
